@@ -1,0 +1,23 @@
+<h1>Listing Musicians</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Surname</th>
+  </tr>
+
+  <% @musicians.each do |musician| %>
+    <tr>
+      <td><%= musician.name %></td>
+      <td><%= musician.surname %></td>
+      <td><%= link_to 'Show', musician_path(musician) %></td>
+      <td><%= link_to 'Edit', edit_musician_path(musician) %></td>
+      <td><%= link_to 'Destroy', musician_path(musician),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br>
+<%= link_to '|Index page|', root_path %>

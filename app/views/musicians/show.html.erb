@@ -1,0 +1,24 @@
+<p>
+  <strong>Name:</strong>
+  <%= @musician.name %>
+</p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @musician.surname %>
+</p>
+
+<p>
+  <strong>Date of Birth:</strong>
+  <%= @musician.date_of_birth %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @musician.description %>
+</p>
+
+<%= link_to '|Edit record|', edit_musician_path(@musician) %>
+<%= link_to '|Back|', new_musician_path %><br>
+<%= link_to '|Index page|', root_path %>
+
