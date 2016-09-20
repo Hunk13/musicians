@@ -1,5 +1,7 @@
 class MusiciansController < ApplicationController
   before_action :find_musician, only: [:show, :edit, :update, :destroy]
+  before_action :find_genres, only: [:new, :edit]
+
   def index
     if params[:genre].blank?
       @musicians = Musician.all.order("created_at DESC")
@@ -14,11 +16,9 @@ class MusiciansController < ApplicationController
 
   def new
     @musician = Musician.new
-    @genres = Genre.all.map{ |c| [c.name, c.id] }
   end
 
   def edit
-    @genres = Genre.all.map{ |c| [c.name, c.id] }
   end
 
   def create
@@ -34,7 +34,7 @@ class MusiciansController < ApplicationController
 
   def update
     if @musician.update(musician_params)
-      redirect_to @musician
+      redirect_to musician_path(@musician)
     else
       render 'edit'
     end
@@ -59,5 +59,9 @@ class MusiciansController < ApplicationController
 
   def find_musician
     @musician = Musician.find(params[:id])
+  end
+
+  def find_genres
+    @genres = Genre.all.map{ |c| [c.name, c.id] }
   end
 end

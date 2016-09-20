@@ -1,31 +1,33 @@
-<h1>New Musician</h1>
+<div class="col-md-6 col-md-offset-3">
+  <div class="new-book-form">
 
-<%= simple_form_for :musician, url: musicians_path, html: {class: "clearfix"} do |f| %>
-  <% if @musician.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@musician.errors.count, "error") %> prohibited
-        this record from being saved:
-      </h2>
-      <ul>
-        <% @musician.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <h1>New Musician</h1>
 
-  <div class='form-input'>
-    <%= select_tag(:genre_id, options_for_select(@genres), prompt: "Select a genre") %>
-    <%= f.input :name, input_html: { class: 'form-control' } %>
-    <%= f.input :surname, input_html: { class: 'form-control' } %>
-    <%= f.input :date_of_birth, as: :date, start_year: Date.today.year - 90,
-                                end_year: Date.today.year - 12,
-                                order: [:month, :year, :day] %>
-    <%= f.input :description, as: :text %>
-    <%= f.button :submit %>
+    <%= simple_form_for :musician, url: musicians_path, html: {class: "clearfix"} do |f| %>
+      <% if @musician.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@musician.errors.count, "error") %> prohibited
+            this record from being saved:
+          </h2>
+          <ul>
+            <% @musician.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class='form-input'>
+        <%= select_tag(:genre_id, options_for_select(@genres), prompt: "Select a genre") %>
+        <%= f.input :name, input_html: { class: 'form-control' } %>
+        <%= f.input :surname, input_html: { class: 'form-control' } %>
+        <%= f.input :date_of_birth, as: :date, start_year: Date.today.year - 90,
+                                    end_year: Date.today.year - 12,
+                                    order: [:month, :year, :day] %>
+        <%= f.input :description, as: :text %>
+        <%= f.button :submit %>
+      </div>
+    <% end %>
   </div>
-<% end %>
-
-<%= link_to '|Back|', musicians_path %><br>
-<%= link_to '|Index page|', root_path %>
+</div>
