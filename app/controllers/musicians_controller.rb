@@ -16,24 +16,25 @@ class MusiciansController < ApplicationController
   end
 
   def new
-    @musician = Musician.new
+    @musician = current_user.musicians.build
   end
 
   def edit
   end
 
   def create
-    @musician = Musician.new(musician_params)
+    @musician = current_user.musicians.build(musician_params)
     @musician.genre_id = params[:genre_id]
 
     if @musician.save
-      redirect_to @musician
+      redirect_to root_path
     else
       render 'new'
     end
   end
 
   def update
+    @musician.genre_id = params[:genre_id]
     if @musician.update(musician_params)
       redirect_to musician_path(@musician)
     else
@@ -44,7 +45,6 @@ class MusiciansController < ApplicationController
 
   def destroy
     @musician.destroy
-
     redirect_to musicians_path
   end
 
