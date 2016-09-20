@@ -19,13 +19,18 @@
       <% end %>
 
       <div class='form-input'>
-        <%= select_tag(:genre_id, options_for_select(@genres, '1'), { class: "form-control" }) %>
-        <%= f.input :name, input_html: { class: 'form-control' } %>
-        <%= f.input :surname, input_html: { class: 'form-control' } %>
+        <h5>Select genre</h5>
+        <%= select_tag(:genre_id, options_for_select(@genres, '1'), { class: "form-control" }) %> <br>
+        <%= f.input :name,
+                    label: 'Name of Musician',
+                    required: false,
+                    input_html: { class: 'form-control' } %>
+        <%= f.input :surname, required: false, input_html: { class: 'form-control' } %>
         <%= f.input :date_of_birth, as: :date, start_year: Date.today.year - 90,
                                     end_year: Date.today.year - 12,
-                                    order: [:month, :year, :day] %>
-        <%= f.input :description, as: :text %>
+                                    order: [:month, :year, :day],
+                                    required: false %>
+        <%= f.input :description, as: :text, required: false %>
         <%= f.button :submit %>
       </div>
     <% end %>
