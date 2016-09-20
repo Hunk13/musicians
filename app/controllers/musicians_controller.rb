@@ -55,7 +55,8 @@ class MusiciansController < ApplicationController
                                      :surname,
                                      :date_of_birth,
                                      :description,
-                                     :genre_id)
+                                     :genre_id,
+                                     :avatar)
   end
 
   def find_musician

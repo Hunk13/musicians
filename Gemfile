@@ -15,6 +15,9 @@ gem 'bootstrap-sass'
 gem 'puma'
 gem 'devise'
 gem 'will_paginate'
+gem 'paperclip'
+gem 'aws-sdk'
+gem 'figaro'
 
 group :development, :test do
   gem 'byebug'

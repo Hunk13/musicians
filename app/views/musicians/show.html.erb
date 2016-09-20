@@ -1,4 +1,7 @@
 <div class="row">
+  <div class="col-md-4">
+    <%= image_tag @musician.avatar.url(:musician_show), class: "musican_show" %>
+  </div>
   <div class="col-md-8">
     <div class="musician-info">
       <h3 class="musician-author"><span>Name: </span><%= @musician.name %></h3>
@@ -15,7 +18,10 @@
   <% if user_signed_in? %>
     <% if @musician.user_id == current_user.id %>
       <%= link_to "Edit", edit_musician_path(@musician), class: "btn btn-custom" %>
-      <%= link_to "Delete", musician_path(@musician), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-custom" %>
+      <%= link_to "Delete", musician_path(@musician),
+                            method: :delete,
+                            data: { confirm: "Are you sure?" },
+                            class: "btn btn-custom" %>
     <% end %>
   <% end %>
 </div>

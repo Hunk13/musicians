@@ -7,7 +7,8 @@
     <% @musicians.each do |musician| %>
       <div class="col-md-3">
         <a href="/musicians/<%= musician.id %>">
-          <%= link_to musician.name, musician_path(musician) %>
+          <%= image_tag musician.avatar.url(:musician_index), class: "musician" %>
+          <p><%= musician.name %>, <%= musician.surname %></p>
         </a>
       </div>
     <% end %>
