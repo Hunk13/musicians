@@ -5,10 +5,10 @@ class MusiciansController < ApplicationController
 
   def index
     if params[:genre].blank?
-      @musicians = Musician.all.order("created_at DESC")
+      @musicians = Musician.paginate(:page => params[:page]).all.order("created_at DESC")
     else
       @genre_id = Genre.find_by(name: params[:genre]).id
-      @musicians = Musician.where(genre_id: @genre_id).order("created_at DESC")
+      @musicians = Musician.paginate(:page => params[:page]).where(genre_id: @genre_id).order("created_at DESC")
     end
   end
 

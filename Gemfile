@@ -14,6 +14,7 @@ gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'puma'
 gem 'devise'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'byebug'
