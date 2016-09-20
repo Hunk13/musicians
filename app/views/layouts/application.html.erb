@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Musicians</title>
+  <title>Directory of musicians</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,7 +10,7 @@
 <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
-      <%= link_to "Musicians Catalog", root_path, class: "navbar-brand" %>
+      <%= link_to "Directory of musicians", root_path, class: "navbar-brand" %>
     </div>
     <ul class="nav navbar-nav">
         <% if user_signed_in? %>
