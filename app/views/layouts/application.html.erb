@@ -7,8 +7,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to "Musicians Catalog", root_path, class: "navbar-brand" %>
+    </div>
+    <ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="href dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Genres<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <% Genre.all.each do |genre| %>
+            <li class="<%= 'active' if params[:genre] == genre.name %>">
+              <%= link_to genre.name, musicians_path(genre: genre.name), class: "link" %>
+            </li>
+            <% end %>
+          </ul>
+        </li>
+      </ul>
+    </ul>
+  </div>
+</nav>
 
-<%= yield %>
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>

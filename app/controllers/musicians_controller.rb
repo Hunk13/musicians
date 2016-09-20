@@ -1,7 +1,12 @@
 class MusiciansController < ApplicationController
   before_action :find_musician, only: [:show, :edit, :update, :destroy]
   def index
-    @musicians = Musician.all
+    if params[:genre].blank?
+      @musicians = Musician.all.order("created_at DESC")
+    else
+      @genre_id = Genre.find_by(name: params[:genre]).id
+      @musicians = Musician.where(genre_id: @genre_id).order("created_at DESC")
+    end
   end
 
   def show
