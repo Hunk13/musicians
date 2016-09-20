@@ -1,6 +1,7 @@
 class MusiciansController < ApplicationController
   before_action :find_musician, only: [:show, :edit, :update, :destroy]
   before_action :find_genres, only: [:new, :edit]
+  before_action :authenticate_user!, only: [:new, :edit]
 
   def index
     if params[:genre].blank?

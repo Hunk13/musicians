@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :musicians
 
-  root 'home#index'
+  root 'musicians#index'
 end
