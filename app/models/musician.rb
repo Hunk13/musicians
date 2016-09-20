@@ -1,4 +1,5 @@
 class Musician < ActiveRecord::Base
-  validates :name, presence: true
+  belongs_to :genre
 
+  validates :name, presence: true
 end

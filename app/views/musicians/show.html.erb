@@ -18,6 +18,12 @@
   <%= @musician.description %>
 </p>
 
+<p>
+  <strong>Mysician genre:</strong>
+  <%= @musician.genre.name %>
+</p>
+
+
 <%= link_to '|Edit record|', edit_musician_path(@musician) %>
 <%= link_to '|Back|', new_musician_path %><br>
 <%= link_to '|Index page|', root_path %>

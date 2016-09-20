@@ -1,22 +1,24 @@
 class MusiciansController < ApplicationController
+  before_action :find_musician, only: [:show, :edit, :update, :destroy]
   def index
     @musicians = Musician.all
   end
 
   def show
-    @musician = Musician.find(params[:id])
   end
 
   def new
     @musician = Musician.new
+    @genres = Genre.all.map{ |c| [c.name, c.id] }
   end
 
   def edit
-    @musician = Musician.find(params[:id])
+    @genres = Genre.all.map{ |c| [c.name, c.id] }
   end
 
   def create
     @musician = Musician.new(musician_params)
+    @musician.genre_id = params[:genre_id]
 
     if @musician.save
       redirect_to @musician
@@ -26,8 +28,6 @@ class MusiciansController < ApplicationController
   end
 
   def update
-    @musician = Musician.find(params[:id])
-
     if @musician.update(musician_params)
       redirect_to @musician
     else
@@ -37,7 +37,6 @@ class MusiciansController < ApplicationController
   end
 
   def destroy
-    @musician = Musician.find(params[:id])
     @musician.destroy
 
     redirect_to musicians_path
@@ -49,6 +48,11 @@ class MusiciansController < ApplicationController
     params.require(:musician).permit(:name,
                                      :surname,
                                      :date_of_birth,
-                                     :description)
+                                     :description,
+                                     :genre_id)
+  end
+
+  def find_musician
+    @musician = Musician.find(params[:id])
   end
 end
