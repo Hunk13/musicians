@@ -21,11 +21,22 @@ gem 'figaro'
 
 group :development, :test do
   gem 'byebug'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'launchy'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'rubocop'
+  gem 'table_print'
 end
 
+group :test do
+  gem 'shoulda-matchers'
+  gem 'json_spec'
+  gem 'codeclimate-test-reporter', require: nil
+  gem 'simplecov', require: false
+end
