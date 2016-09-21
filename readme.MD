@@ -1,3 +1,7 @@
+[![Code Climate](https://codeclimate.com/github/Hunk13/musicians/badges/gpa.svg)](https://codeclimate.com/github/Hunk13/musicians)
+[![Test Coverage](https://codeclimate.com/github/Hunk13/musicians/badges/coverage.svg)](https://codeclimate.com/github/Hunk13/musicians/coverage)
+[![Issue Count](https://codeclimate.com/github/Hunk13/musicians/badges/issue_count.svg)](https://codeclimate.com/github/Hunk13/musicians)
+
 [Link to herokuapp](https://music-for-itibo.herokuapp.com/)
 
 # Каталог музыкантов.
