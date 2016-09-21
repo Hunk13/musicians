@@ -8,7 +8,7 @@ class Musician < ActiveRecord::Base
                     storage: :s3,
                     s3_region: ENV['S3_REGION'],
                     s3_credentials: Proc.new{|a| a.instance.s3_credentials },
-                    styles: { musician_index: '250x450>',
+                    styles: { musician_index: '250x450#',
                               musician_show: '325x475>' },
                     default_url: '/images/:style/missing.png'
 
