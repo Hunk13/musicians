@@ -34,6 +34,9 @@
                                     order: [:month, :year, :day],
                                     required: false %>
         <%= f.input :description, as: :text, required: false %>
+        <%= f.input :biography, as: :text, required: false %>
+        <%= f.input :discography, as: :text, required: false %>
+        <%= f.input :awards, as: :text, required: false %>
         <%= f.input :avatar, as: :file, required: false, label: 'Select Avatar' %> <br>
         <%= f.button :submit %>
       </div>

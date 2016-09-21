@@ -55,6 +55,9 @@ class MusiciansController < ApplicationController
                                      :surname,
                                      :date_of_birth,
                                      :description,
+                                     :biography,
+                                     :discography,
+                                     :awards,
                                      :genre_id,
                                      :avatar)
   end
