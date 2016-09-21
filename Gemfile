@@ -40,3 +40,5 @@ group :test do
   gem 'codeclimate-test-reporter', require: nil
   gem 'simplecov', require: false
 end
+
+gem 'rails_12factor', group: :production
