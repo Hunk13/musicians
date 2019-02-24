@@ -27,13 +27,13 @@ ActiveRecord::Schema.define(version: 20160921093044) do
     t.string   "surname"
     t.date     "date_of_birth"
     t.text     "description"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.integer  "genre_id"
     t.integer  "user_id"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
+    t.integer  "avatar_file_size",    limit: 8
     t.datetime "avatar_updated_at"
     t.text     "biography"
     t.text     "discography"
