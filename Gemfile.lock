@@ -1185,7 +1185,7 @@ DEPENDENCIES
   capybara
   codeclimate-test-reporter
   coffee-rails
-  devise
+  devise (>= 4.7.1)
   factory_bot_rails
   figaro
   jbuilder

@@ -12,7 +12,7 @@ gem 'jbuilder'
 gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'puma'
-gem 'devise'
+gem "devise", ">= 4.7.1"
 gem 'will_paginate'
 gem 'paperclip'
 gem 'aws-sdk'
