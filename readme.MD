@@ -16,4 +16,4 @@ Ruby on Rails
 HTML, SCSS
 
 Изображения музыкантов хранятся на сервере Amazon S3
-Для тестирования используются RSpec, Capybara, FactoryGirl
+Для тестирования используются RSpec, Capybara, FactoryBot

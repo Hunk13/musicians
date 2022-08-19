@@ -1,4 +1,4 @@
-class AddAttachmentAvatarToMusicians < ActiveRecord::Migration
+class AddAttachmentAvatarToMusicians < ActiveRecord::Migration[4.2]
   def self.up
     change_table :musicians do |t|
       t.attachment :avatar
